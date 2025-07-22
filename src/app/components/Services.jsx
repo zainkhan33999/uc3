@@ -1,9 +1,9 @@
 "use client"
 import Image from 'next/image'
-import main1 from "../assets/main1.jpg"
-import main2 from "../assets/main2.jpg"
-import main3 from "../assets/main3.jpg"
-import main4 from "../assets/main4.jpeg"
+import cer1 from "../assets/cer1.jpg"
+import cer2 from "../assets/cer2.png"
+import cer3 from "../assets/cer3.jpg"
+
 import { motion } from 'framer-motion'
 const Services = () => {
  
@@ -11,22 +11,22 @@ const Services = () => {
 const services = [
 
   { 
-    service: "Street Lights", 
+    service: "Birth Certificate", 
   
-    image: main2,
-    alt: "Street Lights"
+    image: cer1,
+    alt: "Birth Certificate"
   },
   { 
-    service: "Protest Demonstration", 
+    service: "Marrige Certificate", 
 
-    image: main2,
-    alt: "Protest Demonstration"
+    image: cer2,
+    alt: "Marrige Certificate"
   },
   { 
-    service: "Nariyal Bagh", 
+    service: "Death Certificate", 
 
-    image: main2,
-    alt: "Nariyal Bagh"
+    image: cer3,
+    alt: "Death Certificate"
   },
   
   
@@ -52,9 +52,10 @@ const services = [
             <Image 
               className='w-full h-48 sm:h-56 object-cover'
               src={room.image}
-              alt="ff"
+              alt="room"
               width={400}
               height={300}
+            
             />
             <div className='p-4'>
               <div className='flex justify-between flex-col  gap-5 mb-3'>

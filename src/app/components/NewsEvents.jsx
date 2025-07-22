@@ -1,9 +1,11 @@
 "use client"
 import Image from 'next/image'
-import main1 from "../assets/main1.jpg"
-import main2 from "../assets/main2.jpg"
-import main3 from "../assets/main3.jpg"
-import main4 from "../assets/main4.jpeg"
+import ne1 from "../assets/ne1.jpg"
+import ne2 from "../assets/ne2.jpg"
+import ne3 from "../assets/ne3.jpg"
+import ne4 from "../assets/ne4.jpg"
+import ne5 from "../assets/ne5.jpeg"
+import ne6 from "../assets/ne6.jpg"
 import { motion } from 'framer-motion'
 const NewsEvents = () => {
  
@@ -13,37 +15,37 @@ const services = [
   { 
     service: "Street Lights", 
     desc: "Street lights in our area enhance safety, visibility.", 
-    image: main2,
+    image:ne1,
     alt: "Street Lights"
   },
   { 
     service: "Protest Demonstration", 
     desc: "allowing safe and peacful protests", 
-    image: main2,
+    image:ne2,
     alt: "Protest Demonstration"
   },
   { 
     service: "Nariyal Bagh", 
     desc: "Alhamdulillah, Jamaat-e-Islami have restored it", 
-    image: main2,
+    image:ne3,
     alt: "Nariyal Bagh"
   },
   { 
     service: "Family parks", 
     desc: "Alhamdulillah, in one month five family parks were opened simultaneously.", 
-    image: main2,
+    image:ne4,
     alt: "Family parks"
   },
   { 
     service: "Streets Cleaning", 
     desc: "Alhamdulillah, our representatives cleaned all streets in one week. ", 
-    image: main2,
+    image:ne5,
     alt: "Streets Cleaning"
   },
   { 
     service: "Sasta Bazar", 
     desc: "Timings 2 PM to 6:30 PM From 1st Ramadan to 20th Ramadan ",
-    image: main2,
+    image:ne6 ,
     alt: "Nariyal Bagh"
   },
   

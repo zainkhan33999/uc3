@@ -38,27 +38,27 @@ const Header = () => {
         </section>
         <section>
         <div className="flex gap-5  flex-wrap">
-              <div className="flex items-center">
+              <div className="flex  items-center">
                 <p>
-                <FaFacebookSquare className="" size={30} />
+                <FaFacebookSquare className="hover:text-[#0d7d43]" size={30} />
                 </p>
                
               </div>
 
-              <div className="flex items-center">
+              <div className="flex  items-center">
                 <p>
-                  <FaSquareXTwitter size={30} />
+                  <FaSquareXTwitter className="hover:text-[#0d7d43]" size={30} />
                 </p>
                 
               </div>
               <div className="flex items-center">
                 <p>
-                  <FaLinkedin  size={30}/>{" "}
+                  <FaLinkedin className="hover:text-[#0d7d43]"  size={30}/>{" "}
                 </p>
               </div>
               <div className="flex items-center">
                 <p>
-                  <FaInstagramSquare size={30} />{" "}
+                  <FaInstagramSquare className="hover:text-[#0d7d43]" size={30} />{" "}
                 </p>
               </div>
       
