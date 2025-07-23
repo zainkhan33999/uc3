@@ -30,7 +30,7 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="w-full bg-white py-10">
+    <div className="w-full bg-white py-10" id="services">
       <motion.h1
         className="text-3xl md:text-4xl font-bold text-[#0d7d43] uppercase text-center mb-10"
         initial={{ opacity: 0 }}

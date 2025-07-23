@@ -15,14 +15,15 @@ const Navbar = () => {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    
 
     const navItems = [
         { name: 'Home', id: 'home' },
         { name: 'About', id: 'about' },
-        { name: 'News & Events', id: 'news&events' },
-        { name: 'Complaint', id: 'complaint' },
+        { name: 'News & Events', id: 'news-events' },
+        { name: 'Our Team', id: 'team' },
         { name: 'Services', id: 'services' },
-        { name: 'Our Team', id: 'ourteam' },
+        { name: 'Reviews', id: 'reviews' },
         { name: 'Contact', id: 'contact' }
     ];
 

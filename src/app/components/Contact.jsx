@@ -24,7 +24,7 @@ export default function Contact() {
     <>
       
       {/* Contact Section */}
-      <section className="py-16 ">
+      <section className="py-16 " id='contact'>
       <motion.h2
             className="text-3xl md:text-4xl font-extrabold text-center text-[#0D7D43] uppercase mb-4"
             initial={{ y: -20 }}
