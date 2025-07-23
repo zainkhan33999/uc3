@@ -9,7 +9,7 @@ import Services from "./components/Services";
 import Reviews from "./components/Reviews";
 export default function Home() {
   return (
-    <div className="bg-primary">
+    <div className="bg-white">
       <h1>
         <Header/>
         <Navbar/>

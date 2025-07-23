@@ -1,97 +1,154 @@
-"use client"
-import Image from 'next/image'
-import ne1 from "../assets/ne1.jpg"
-import ne2 from "../assets/ne2.jpg"
-import ne3 from "../assets/ne3.jpg"
-import ne4 from "../assets/ne4.jpg"
-import ne5 from "../assets/ne5.jpeg"
-import ne6 from "../assets/ne6.jpg"
-import { motion } from 'framer-motion'
+"use client";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Import images
+import ne1 from "../assets/ne1.jpg";
+import ne2 from "../assets/ne2.jpg";
+import ne3 from "../assets/ne3.jpg";
+import ne4 from "../assets/ne4.jpg";
+import ne5 from "../assets/ne5.jpeg";
+import ne6 from "../assets/ne6.jpg";
+
 const NewsEvents = () => {
- 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: "-50px 0px",
+  });
 
-const services = [
+  const events = [
+    {
+      title: "Street Lights",
+      description:
+        "Street lights in our area enhance safety and visibility during nighttime.",
+      image: ne1,
+      alt: "Well-lit streets with new lighting infrastructure",
+    },
+    {
+      title: "Protest Demonstration",
+      description:
+        "Facilitating safe and peaceful protests for community concerns",
+      image: ne2,
+      alt: "Community members participating in peaceful demonstration",
+    },
+    {
+      title: "Nariyal Bagh Restoration",
+      description:
+        "Alhamdulillah, Jamaat-e-Islami has successfully restored this historic garden",
+      image: ne3,
+      alt: "Renovated Nariyal Bagh public space",
+    },
+    {
+      title: "Family Parks Initiative",
+      description:
+        "Five new family parks opened simultaneously to serve our community",
+      image: ne4,
+      alt: "Children playing in newly opened family park",
+    },
+    {
+      title: "Neighborhood Cleanup",
+      description:
+        "Comprehensive street cleaning campaign completed across all areas",
+      image: ne5,
+      alt: "Clean streets after community cleanup effort",
+    },
+    {
+      title: "Ramadan Sasta Bazar",
+      description:
+        "Affordable market open daily from 2 PM to 6:30 PM during Ramadan",
+      image: ne6,
+      alt: "Community members shopping at Ramadan bazar",
+    },
+  ];
 
-  { 
-    service: "Street Lights", 
-    desc: "Street lights in our area enhance safety, visibility.", 
-    image:ne1,
-    alt: "Street Lights"
-  },
-  { 
-    service: "Protest Demonstration", 
-    desc: "allowing safe and peacful protests", 
-    image:ne2,
-    alt: "Protest Demonstration"
-  },
-  { 
-    service: "Nariyal Bagh", 
-    desc: "Alhamdulillah, Jamaat-e-Islami have restored it", 
-    image:ne3,
-    alt: "Nariyal Bagh"
-  },
-  { 
-    service: "Family parks", 
-    desc: "Alhamdulillah, in one month five family parks were opened simultaneously.", 
-    image:ne4,
-    alt: "Family parks"
-  },
-  { 
-    service: "Streets Cleaning", 
-    desc: "Alhamdulillah, our representatives cleaned all streets in one week. ", 
-    image:ne5,
-    alt: "Streets Cleaning"
-  },
-  { 
-    service: "Sasta Bazar", 
-    desc: "Timings 2 PM to 6:30 PM From 1st Ramadan to 20th Ramadan ",
-    image:ne6 ,
-    alt: "Nariyal Bagh"
-  },
-  
- 
-];
-  
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
-    <div className=''>
+    <section
+      id="news-events"
+      className="bg-white py-12 md:py-16 lg:py-20 overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <motion.h2
+            className="text-3xl md:text-4xl font-extrabold text-[#0d7d43] uppercase mb-4"
+            initial={{ y: -20 }}
+            animate={inView ? { y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            Community News & Events
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Stay updated with the latest initiatives and developments in our
+            community
+          </motion.p>
+        </motion.div>
 
-      <motion.h1 
-        className='text-3xl md:text-4xl font-bold text-[#0d7d43] text-primary uppercase  p-5 text-center '
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        News & Events
-      </motion.h1>
-    <div className='grid grid-cols-1  shadow-lg sm:grid-cols-2   lg:grid-cols-3 gap-6 w-full px-4 sm:px-6 lg:px-8 py-8'>
-      
-      {services.map((room, index) => (
-        <div key={index} className='h-full w-full flex justify-center  items-center rounded-lg bg-white  overflow-hidden transition-transform duration-300 hover:scale-105'>
-          <div className='w-full'>
-            <Image 
-              className='w-full h-48 sm:h-56 object-cover'
-              src={room.image}
-              alt={room.desc}
-              width={400}
-              height={300}
-            />
-            <div className='p-4'>
-              <div className='flex justify-between flex-col  gap-5 mb-3'>
-                <h1 className=' text-xl text-gray-800 text-left font-bold'>{room.service}</h1>
-                <p className='text-sm font-semibold text-[#0d7d43] text-center'>{room.desc}</p>
-              </div>
-              <div className='flex flex-col gap-3'>
-                <button className='py-2 px-5 border-2 cursor-pointer border-[#0d7d43] hover:bg-[#0d7d43] mt-4 text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors duration-300'>
-                 Read More
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-    </div>
-  )
-}
+        {/* Cards */}
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {events.map((event, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              variants={cardVariants}
+              whileHover={{ y: -10 }}
+              className="group relative w-full h-[360px] rounded-[15px] overflow-hidden bg-white flex items-end shadow-md hover:shadow-xl transition-all duration-400 ease-out"
+            >
+              {/* Background Image */}
+              <Image
+                src={event.image}
+                alt={event.alt}
+                fill
+                className="absolute inset-0 object-cover rounded-[15px] z-0"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={90}
+                priority={index < 3}
+              />
 
-export default NewsEvents
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 rounded-[15px]" />
+
+              {/* Info */}
+              <div className="relative z-20 p-6 text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+                <p className="text-sm tracking-wide mb-4">{event.description}</p>
+              
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default NewsEvents;

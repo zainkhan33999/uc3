@@ -115,11 +115,11 @@ const Main = () => {
                 {slides[currentIndex].subheading}
               </p> */}
             </motion.section>
-            <section className='text-[#f5f5f5] flex gap-5 mt-5 cursor-pointer'>
-              <button onClick={() => handlebuttonClick("about")} className='cursor-pointer border-2 bg-[#1b9c59] hover:bg-transparent bg-primary hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
+            <section className='text-[#f5f5f5]  flex gap-5 mt-5 cursor-pointer'>
+              <button onClick={() => handlebuttonClick("about")} className='cursor-pointer border-2 bg-[#0D7D43] hover:bg-transparent  hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
                COMPLAINT
               </button>
-              <button onClick={() => handlebuttonClick("tarrif")} className='cursor-pointer border-2 bg-[#1b9c59] hover:bg-transparent hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
+              <button onClick={() => handlebuttonClick("tarrif")} className='cursor-pointer border-2 bg-[#0D7D43] hover:bg-transparent hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
              CONTACT US
               </button>
             </section>

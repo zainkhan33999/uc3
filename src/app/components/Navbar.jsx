@@ -27,7 +27,7 @@ const Navbar = () => {
     ];
 
     return (
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden '>
             {/* PC nav */}
             <div className='hidden p-5 md:flex justify-between h-[15vh] items-center ml-3 mr-3  mt-5cursor-pointer'>
               <h1 className='text-3xl text-[#0d7d43]'>
@@ -37,7 +37,7 @@ UC-3 GULSHAN TOWN
                     {navItems.map((item) => (
                         <li 
                             key={item.id} 
-                            className='cursor-pointer hover:underline hover:text-[#0d7d43] decoration-[#0d7d43] transition-colors duration-200'
+                            className=' text-black cursor-pointer hover:underline hover:text-[#0d7d43] decoration-[#0d7d43] transition-colors duration-200'
                             onClick={() => handleNavClick(item.id)}
                         >
                             {item.name}
@@ -56,7 +56,7 @@ UC-3 GULSHAN TOWN
                     </div>
                   
                     <div className='border-2 p-1 border-[#0d7d43]'>
-                        <RxHamburgerMenu onClick={() => setNavState(!navState)} size={30} />
+                        <RxHamburgerMenu onClick={() => setNavState(!navState)} className='text-black' size={30} />
                     </div>
                 </section>
                 
@@ -66,7 +66,7 @@ UC-3 GULSHAN TOWN
                             {navItems.map((item) => (
                                 <li 
                                     key={item.id}
-                                    className='cursor-pointer active:bg-primary active:text-white hover:text-white   hover:bg-[#0d7d43] bgdecoration-[#0d7d43] transition-colors duration-200 px-2 py-1'
+                                    className='cursor-pointer  text-black active:text-white hover:text-white   hover:bg-[#0d7d43] bg-decoration-[#0d7d43] transition-colors duration-200 px-2 py-1'
                                     onClick={() => handleNavClick(item.id)}
                                 >
                                     {item.name}
