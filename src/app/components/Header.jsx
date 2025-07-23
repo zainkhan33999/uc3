@@ -9,7 +9,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 const Header = () => {
   return (
     <div>
-      <div className="w-full bg-[#0D7D43] p-3 cursor-pointer text-md text-white text-secondry px-5 hidden md:block">
+      <div className="w-full bg-[#212529] p-3 cursor-pointer text-md text-white text-secondry px-5 hidden md:block">
         <div className="flex flex-wrap justify-between items-center">
         <section>
 

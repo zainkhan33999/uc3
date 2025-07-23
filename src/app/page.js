@@ -7,6 +7,9 @@ import NewsEvents from "./components/NewsEvents";
 import Team from "./components/Team";
 import Services from "./components/Services";
 import Reviews from "./components/Reviews";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Copyright from "./components/Copyright";
 export default function Home() {
   return (
     <div className="bg-white">
@@ -19,6 +22,10 @@ export default function Home() {
         <Team/>
         <Services/>
         <Reviews/>
+      
+        <Contact/>
+        <Footer/>
+        <Copyright/>
       </h1>
     </div>
   );

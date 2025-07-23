@@ -1,7 +1,5 @@
 "use client"
 import React from 'react'
-import Image from 'next/image'
-import aboutpic from "../assets/uc3 office.jpg"
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
@@ -12,7 +10,7 @@ const About = () => {
     rootMargin: '-50px 0px'
   })
 
-  const [imageRef, imageInView] = useInView({
+  const [mapRef, mapInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
     rootMargin: '-50px 0px'
@@ -30,7 +28,7 @@ const About = () => {
     }
   }
 
-  const imageVariants = {
+  const mapVariants = {
     hidden: { opacity: 0, x: 30, scale: 0.95 },
     visible: { 
       opacity: 1, 
@@ -55,26 +53,23 @@ const About = () => {
   };
 
   return (
-    <section id="about" className='px-4 sm:px-6 bg-[#0D7D43] text-white  lg:px-8 py-12 md:py-16 lg:py-20 max-w-7xl mx-auto'>
+    <section id="about" className='px-4 sm:px-6 bg-[#0D7D43] text-white lg:px-8 py-12 md:py-16 lg:py-20 max-w-7xl mx-auto'>
       <div className='flex flex-col md:flex-row gap-10 lg:gap-16 items-center'>
-        {/* Image Section */}
+        
+        {/* Map Section */}
         <motion.div 
-          ref={imageRef}
+          ref={mapRef}
           initial="hidden"
-          animate={imageInView ? "visible" : "hidden"}
-          variants={imageVariants}
+          animate={mapInView ? "visible" : "hidden"}
+          variants={mapVariants}
           className='w-full md:w-1/2 relative'
         >
           <div className='relative w-full h-64 sm:h-80 md:h-96 lg:h-[480px] rounded-xl overflow-hidden shadow-2xl'>
-            <Image 
-              alt='Gulshan-e-Iqbal UC-3 Office' 
-              src={aboutpic}
-              fill
-              className='object-cover object-center'
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
-              quality={90}
-            />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57901.742161170754!2d67.07973107213579!3d24.902794642700496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338b808bfd6b1%3A0x997b1a02c2570822!2sGulshan-e-Iqbal%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1720682152127!5m2!1sen!2sus"  allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+            
+              className="absolute inset-0 w-full h-full border-0"
+            ></iframe>
             <div className='absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent' />
           </div>
         </motion.div>
@@ -88,12 +83,12 @@ const About = () => {
           className='w-full md:w-1/2 space-y-6'
         >
           <motion.h2 
-            className='text-3xl font-extrabold md:text-4xl lg:text-5xl  text-white mb-6 text-center md:text-left'
+            className='text-3xl font-extrabold md:text-4xl lg:text-5xl text-white mb-6 text-center md:text-left'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-             About <span className=' font-extrabold'>Gulshan-e-Iqbal UC-3</span>
+            About <span className='font-extrabold'>Gulshan-e-Iqbal UC-3</span>
           </motion.h2>
 
           <div className='space-y-4'>
@@ -125,6 +120,7 @@ const About = () => {
             </motion.p>
           </div>
 
+          {/* Optional Buttons */}
           {/* <motion.div 
             className='flex flex-wrap gap-4 mt-8'
             initial={{ opacity: 0 }}
@@ -133,13 +129,13 @@ const About = () => {
           >
             <button 
               onClick={() => handleButtonClick("services")}
-              className='px-6 py-3 bg-[#0D7D43] hover:bg-transparent border-2 border-[#0D7D43] text-white rounded-lg font-medium transition-all duration-300 hover:scale-[1.02]'
+              className='px-6 py-3 bg-[#0D7D43] hover:bg-transparent border-2 border-white text-white rounded-lg font-medium transition-all duration-300 hover:scale-[1.02]'
             >
               Our Services
             </button>
             <button 
               onClick={() => handleButtonClick("contact")}
-              className='px-6 py-3 bg-transparent hover:bg-[#0D7D43] border-2 border-[#0D7D43] text-white rounded-lg font-medium transition-all duration-300 hover:scale-[1.02]'
+              className='px-6 py-3 bg-transparent hover:bg-[#0D7D43] border-2 border-white text-white rounded-lg font-medium transition-all duration-300 hover:scale-[1.02]'
             >
               Contact Us
             </button>

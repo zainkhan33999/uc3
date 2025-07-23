@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className='overflow-hidden '>
             {/* PC nav */}
             <div className='hidden p-5 md:flex justify-between h-[15vh] items-center ml-3 mr-3  mt-5cursor-pointer'>
-              <h1 className='text-3xl text-[#0d7d43]'>
+              <h1 className='text-3xl font-bold text-[#0d7d43]'>
 UC-3 GULSHAN TOWN
 </h1>
                 <ul className='  flex  gap-5'>

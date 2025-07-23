@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import team1 from "../assets/team1.jpg"
-import team2 from "../assets/team2.png"
+import team2 from "../assets/team2.jpg"
 import team3 from "../assets/team3.png"
 import { FaFacebook, FaTwitter, FaGithub, FaDribbble } from 'react-icons/fa'
 import { FaInstagram, FaX } from 'react-icons/fa6'
@@ -13,7 +13,7 @@ const Team = () => {
       name: "Majid Khan",
       role: "UC Chairman",
       description: "Leading our community with vision and dedication for sustainable development.",
-      image: team3,
+      image: team1,
       social: {
         facebook: "#",
         twitter: "#",
@@ -34,10 +34,10 @@ const Team = () => {
       }
     },
     {
-      name: "Community Leader",
-      role: "Senior Coordinator",
+      name: "Ejaz Ali Laghari",
+      role: "Secetory ",
       description: "Ensuring smooth operations and communication within our community.",
-      image: team1,
+      image: team3,
       social: {
         facebook: "#",
         twitter: "#",

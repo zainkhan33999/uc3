@@ -48,6 +48,7 @@ const Reviews = () => {
   }, []);
 
   const handleSelect = (index) => {
+    
     setShow(false);
     setTimeout(() => {
       setCurrent(index);
@@ -107,7 +108,7 @@ const Reviews = () => {
               key={index}
               onClick={() => handleSelect(index)}
               className={`w-3 h-3 rounded-full focus:outline-none ring-1 ring-offset-2 ring-[#0d7d43] ${
-                index === current ? 'bg-[#0d7d43]' : 'bg-gray-300'
+                index === current ? 'bg-gray-300' : 'bg-[#0d7d43]'
               }`}
               aria-label={`Testimonial ${index + 1}`}
             />
