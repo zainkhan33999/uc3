@@ -135,7 +135,7 @@ export default function Contact() {
             If You Have Any Query Or Complaint, Feel Free To Contact Us
           </h3>
 
-          {status && <p className="text-center text-sm mb-4 text-green-600">{status}</p>}
+          {status && <p className="text-center text-sm mb-4 text-green-600 font-bold">{status}</p>}
 
           <div className="grid   sm:grid-cols-2 lg:grid-cols-3 gap-10">
             <motion.form
@@ -183,22 +183,22 @@ export default function Contact() {
             variants={picVariants}
             className="space-y-6">
               <div className="text-center">
-                <div className="bg-green-100 w-20 h-20 mx-auto flex items-center justify-center rounded-full mb-2">
-                  <FaMapMarkerAlt size={30} className='text-green-800' />
+                <div className="bg-green-100 text-green-800 hover:text-white hover:bg-blue-500 w-20 h-20 mx-auto flex items-center justify-center rounded-full mb-2">
+                  <FaMapMarkerAlt size={30} className=' ' />
                 </div>
-                <h4 className="font-semibold text-slate-800">Our Office</h4>
+                <h4 className="font-semibold text-slate-800 ">Our Office</h4>
                 <p className='text-slate-500'>Gulshan-e-Iqbal, Karachi</p>
               </div>
               <div className="text-center">
-                <div className="bg-green-100 w-20 h-20 mx-auto flex items-center justify-center rounded-full mb-2">
-                  <FaPhone size={30} className='text-green-800' />
+                <div className="bg-green-100 text-green-800 hover:bg-pink-500 hover:text-white w-20 h-20 mx-auto flex items-center justify-center rounded-full mb-2">
+                  <FaPhone size={30} className='' />
                 </div>
                 <h4 className="font-semibold text-slate-800">Call</h4>
                 <p className='text-slate-500'>+92 336 3332468</p>
               </div>
               <div className="text-center">
-                <div className="bg-green-100 w-20 h-20 mx-auto flex items-center justify-center rounded-full mb-2">
-                  <BiLogoGmail size={30} className='text-green-800' />
+                <div className="bg-green-100 text-green-800 hover:bg-red-500 hover:text-white w-20 h-20 mx-auto flex items-center justify-center rounded-full mb-2">
+                  <BiLogoGmail size={30} className='' />
                 </div>
                 <h4 className="font-semibold text-slate-800">Email</h4>
                 <p className='text-slate-500'>info@uc3gulshantown.com</p>
