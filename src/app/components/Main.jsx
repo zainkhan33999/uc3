@@ -106,7 +106,7 @@ const Main = () => {
             className="flex flex-col gap-2 items-center"
           >
             <motion.section>
-              <h1 className="text-white text-3xl md:text-4xl font-bold text-center px-4">
+              <h1 className="text-white text-4xl md:text-5xl font-bold text-center px-4">
                 {slides[currentIndex].heading}
               </h1>
             </motion.section>
