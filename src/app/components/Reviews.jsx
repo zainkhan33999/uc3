@@ -65,7 +65,7 @@ const Reviews = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className=" bg-[#0D7D43] py-12 px-4 sm:px-6 lg:px-8"
+      className=" bg-gradient-to-t from-emerald-600 to-green-800 py-12 px-4 sm:px-6 lg:px-8"
     >
       <h2 className="text-3xl md:text-4xl font-extrabold text-white  uppercase text-center mb-10">
         Testimonials
@@ -94,10 +94,10 @@ const Reviews = () => {
             <p className="text-xl md:text-2xl text-gray-800 dark:text-gray-200 mb-4">
               &quot;{testimonial.quote}&quot;
             </p>
-            <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+            <div className="text-sm text-slate-900   font-bold">
               {testimonial.author}
             </div>
-            <div className="text-xs text-white0 dark:text-gray-400">
+            <div className="text-xs text-white">
               {testimonial.role}
             </div>
           </div>

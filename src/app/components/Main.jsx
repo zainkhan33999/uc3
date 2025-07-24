@@ -17,8 +17,8 @@ const Main = () => {
     },
     {   
       image: main2,
-      alt: "MAZAR -E- QUIAD",
-      heading: "MAZAR -E- QUIAD",
+      alt: "MAZAR -E- QUAID",
+      heading: "MAZAR -E- QUAID",
       subheading: "Where Luxury Meets Comfort"
     },
     {
@@ -68,7 +68,7 @@ const Main = () => {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden font-lora">
+    <div id='main' className="relative w-full h-screen overflow-hidden font-lora">
       {/* Background images with fade animation */}
       <AnimatePresence custom={direction}>
         <motion.div
@@ -90,7 +90,7 @@ const Main = () => {
       </AnimatePresence>
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div  className="absolute inset-0 bg-black/40"></div>
       
       {/* Text content with coordinated animation */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -117,9 +117,9 @@ const Main = () => {
             </motion.section>
             <section className='text-[#f5f5f5]  flex gap-5 mt-5 cursor-pointer'>
               <button onClick={() => handlebuttonClick("about")} className='cursor-pointer border-2 bg-[#0D7D43] hover:bg-transparent  hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
-               COMPLAINT
+              About US
               </button>
-              <button onClick={() => handlebuttonClick("tarrif")} className='cursor-pointer border-2 bg-[#0D7D43] hover:bg-transparent hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
+              <button onClick={() => handlebuttonClick("contact")} className='cursor-pointer border-2 bg-[#0D7D43] hover:bg-transparent hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
              CONTACT US
               </button>
             </section>

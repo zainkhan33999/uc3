@@ -71,7 +71,7 @@ const Team = () => {
   }
 
   return (
-    <section id="team" className="bg-[#0D7D43] py-16 md:py-20 lg:py-24">
+    <section id="team" className="bg-gradient-to-t from-emerald-600 to-green-800 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -121,7 +121,7 @@ const Team = () => {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
                   {member.name}
                 </h3>
-                <span className="text-slate-700 text-sm font-medium">
+                <span className="text-slate-900 text-sm font-medium">
                   {member.role}
                 </span>
                 <p className="mt-3 text-gray-600 dark:text-gray-300">

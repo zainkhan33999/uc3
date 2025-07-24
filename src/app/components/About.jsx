@@ -53,26 +53,30 @@ const About = () => {
   };
 
   return (
-    <section id="about" className='px-4 sm:px-6 bg-[#0D7D43] text-white lg:px-8 py-12 md:py-16 lg:py-20 max-w-7xl mx-auto'>
+    <section id="about" className='px-4 sm:px-6 bg-gradient-to-r from-emerald-600 to-green-800 text-white lg:px-8 py-12 md:py-16 lg:py-20 max-w-7xl mx-auto'>
       <div className='flex flex-col md:flex-row gap-10 lg:gap-16 items-center'>
         
         {/* Map Section */}
-        <motion.div 
-          ref={mapRef}
-          initial="hidden"
-          animate={mapInView ? "visible" : "hidden"}
-          variants={mapVariants}
-          className='w-full md:w-1/2 relative'
-        >
-          <div className='relative w-full h-64 sm:h-80 md:h-96 lg:h-[480px] rounded-xl overflow-hidden shadow-2xl'>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57901.742161170754!2d67.07973107213579!3d24.902794642700496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338b808bfd6b1%3A0x997b1a02c2570822!2sGulshan-e-Iqbal%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1720682152127!5m2!1sen!2sus"  allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-            
-              className="absolute inset-0 w-full h-full border-0"
-            ></iframe>
-            <div className='absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent' />
-          </div>
-        </motion.div>
+       {/* Map Section */}
+<motion.div 
+  ref={mapRef}
+  initial="hidden"
+  animate={mapInView ? "visible" : "hidden"}
+  variants={mapVariants}
+  className='w-full md:w-1/2 relative'
+>
+  <div className='relative w-full h-64 sm:h-80 md:h-96 lg:h-[480px] rounded-xl overflow-hidden shadow-2xl'>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57901.742161170754!2d67.07973107213579!3d24.902794642700496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338b808bfd6b1%3A0x997b1a02c2570822!2sGulshan-e-Iqbal%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1720682152127!5m2!1sen!2sus"
+      allowFullScreen={true} 
+      loading="lazy" 
+      referrerPolicy="no-referrer-when-downgrade"
+      className="absolute inset-0 w-full h-full border-0"
+    ></iframe>
+    {/* Only apply gradient to bottom area */}
+    <div className='absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent pointer-events-none' />
+  </div>
+</motion.div>
 
         {/* Text Section */}
         <motion.div 
