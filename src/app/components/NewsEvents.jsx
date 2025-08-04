@@ -137,9 +137,9 @@ const NewsEvents = () => {
               <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 rounded-[15px]" />
 
               {/* Info */}
-              <div className="relative z-20 p-6 text-white  bg-secondary/50 group-hover:bg-transparent translate-y-8  group-hover:translate-y-0 transition-all duration-500">
+              <div className="relative z-20 p-10 flex flex-col text-white w-full  bg-secondary/50  group-hover:bg-transparent translate-y-8  group-hover:translate-y-0 transition-all duration-500">
                 <h3 className="text-xl font-bold mb-2 font-primary">{event.title}</h3>
-                <p className="text-sm  font-secondary tracking-wide mb-4 opacity-0 group-hover:opacity-100">{event.description}</p>
+                <p className="text-sm  hidden font-secondary tracking-wide mb-4 opacity-0 group-hover:block group-hover:opacity-100">{event.description}</p>
               
               </div>
             </motion.div>
