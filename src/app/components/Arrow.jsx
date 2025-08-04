@@ -37,7 +37,7 @@ const Arrow = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-[#212529] cursor-pointer text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-opacity duration-300"
+          className="bg-secondary cursor-pointer text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-opacity duration-300"
           aria-label="Back to top"
         >
           <FaArrowUp className="text-xl" />

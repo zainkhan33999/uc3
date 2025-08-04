@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 @import "tailwindcss";
-@plugin "daisyui";
+@import "tw-animate-css";
 
-:root {
-  --primary: #1A3A2D;
-  --secondrys: #212529;
+@custom-variant dark (&:is(.dark *));
+
+@layer theme {
+  @theme {
+    --color-primary: #059669;
+    --color-secondary : #1E3A8A;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+  }
 }
+

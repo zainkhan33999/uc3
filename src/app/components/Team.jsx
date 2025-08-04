@@ -3,161 +3,161 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import team1 from "../assets/team1.jpg"
 import team2 from "../assets/team2.jpg"
-import team3 from "../assets/team3.png"
-import { FaFacebook, FaTwitter, FaGithub, FaDribbble } from 'react-icons/fa'
-import { FaInstagram, FaX } from 'react-icons/fa6'
+import team3 from "../assets/team3.jpg"
+import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { FaX } from 'react-icons/fa6'
 
 const Team = () => {
   const teamMembers = [
     {
-      name: "Majid Khan",
+      name: "Fayaz ul Huda",
       role: "UC Chairman",
-      description: "Leading our community with vision and dedication for sustainable development.",
+     
       image: team1,
       social: {
-        facebook: "#",
+        linkedin: "#",
         twitter: "#",
-        github: "#",
-        dribbble: "#"
+        facebook: "#",
+        instagram: "#"
       }
     },
     {
-      name: "Ibrahim Siddiqui",
+      name: "Asif Azad",
       role: "UC Vice Chairman",
-      description: "Working closely with the chairman to implement community initiatives.",
+     
       image: team2,
       social: {
-        facebook: "#",
+        linkedin: "#",
         twitter: "#",
-        github: "#",
-        dribbble: "#"
+        facebook: "#",
+        instagram: "#"
       }
     },
     {
-      name: "Ejaz Ali Laghari",
-      role: "Secetory ",
-      description: "Ensuring smooth operations and communication within our community.",
+      name: "HAQ NAWAZ",
+      role: "Secretary",
+      
       image: team3,
       social: {
-        facebook: "#",
+        linkedin: "#",
         twitter: "#",
-        github: "#",
-        dribbble: "#"
+        facebook: "#",
+        instagram: "#"
       }
     }
   ]
 
-  const containerVariants = {
+  const container = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.2,
+        delayChildren: 0.3
       }
     }
   }
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+  const item = {
+    hidden: { scale: 0.5, opacity: 0 },
     visible: {
-      y: 0,
+      scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        type: "spring",
+        damping: 10,
+        stiffness: 100
       }
     }
   }
 
   return (
-    <section id="team" className="bg-gradient-to-t from-emerald-600 to-green-800 py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="team" className="relative py-24 overflow-hidden bg-gradient-to-b from-primary to-secondary">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 -z-10" />
+      
+      <div className="max-w-8xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-            Our <span className="text-[#0dcz]">Leadership</span> Team
+          <span className="inline-block text-sm font-medium text-white bg-white/20 px-4 py-1 rounded-full mb-4">
+            Our Leadership
+          </span>
+          <h2 className="text-3xl font-primary md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Our Elected Representatives
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Meet the dedicated individuals working tirelessly for our community's progress
+          <p className="text-lg text-white/80 font-secondary max-w-3xl mx-auto">
+            Dedicated professionals committed to serving our community with integrity and innovation
           </p>
         </motion.div>
 
-        {/* Team Members Grid */}
+        {/* Circular Team Grid */}
         <motion.div
-          variants={containerVariants}
+          variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid gap-8 md:gap-10 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          viewport={{ once: true, margin: "-100px" }}
+          className="flex flex-wrap justify-center gap-16 lg:gap-24"
         >
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
-              className="bg-whiteq border border-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+              variants={item}
+              className="group relative flex flex-col items-center"
             >
-              <div className="relative h-64 w-full">
+              {/* Circular Profile */}
+              <div className="relative w-48 h-48 rounded-full border-4 border-white/20 group-hover:border-primary transition-all duration-500 shadow-xl overflow-hidden">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-              
-             
-                  quality={90}
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={100}
                   priority={index < 2}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                
+                {/* Social icons - appear on hover */}
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                  {Object.entries(member.social).map(([platform, url]) => {
+                    const Icon = 
+                      platform === 'linkedin' ? FaLinkedin :
+                      platform === 'twitter' ? FaX :
+                      platform === 'facebook' ? FaFacebook :
+                      FaInstagram;
+                    
+                    return (
+                      <a
+                        key={platform}
+                        href={url}
+                        className="bg-white/90 text-primary p-2 rounded-full hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0"
+                        style={{ transitionDelay: `${index * 0.1 + 0.1}s` }}
+                        aria-label={`${member.name}'s ${platform}`}
+                      >
+                        <Icon className="w-4 h-4" />
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                  {member.name}
-                </h3>
-                <span className="text-slate-900 text-sm font-medium">
+              {/* Info Panel */}
+              <div className="mt-6 text-center bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-xs transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute -bottom-10 z-10">
+                <h3 className="text-xl font-bold font-primary text-gray-900 mb-1">{member.name}</h3>
+                <span className="inline-block text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full mb-2">
                   {member.role}
                 </span>
-                <p className="mt-3 text-gray-600 dark:text-gray-300">
-                  {member.description}
-                </p>
-                
-                <div className="flex space-x-4 mt-6">
-                  <a 
-                    href={member.social.facebook} 
-                    className="text-white0 hover:text-[#0d7d43] dark:hover:text-[#1db954] transition-colors"
-                    aria-label={`${member.name} Facebook`}
-                  >
-                    <FaFacebook className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href={member.social.twitter} 
-                    className="text-white0 hover:text-[#0d7d43] dark:hover:text-[#1db954] transition-colors"
-                    aria-label={`${member.name} Twitter`}
-                  >
-                    <FaX className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href={member.social.github} 
-                    className="text-white0 hover:text-[#0d7d43] dark:hover:text-[#1db954] transition-colors"
-                    aria-label={`${member.name} GitHub`}
-                  >
-                    <FaGithub className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href={member.social.dribbble} 
-                    className="text-white0 hover:text-[#0d7d43] dark:hover:text-[#1db954] transition-colors"
-                    aria-label={`${member.name} Dribbble`}
-                  >
-                    <FaInstagram className="w-5 h-5" />
-                  </a>
-                </div>
+                <p className="text-gray-600 text-sm font-secondary">{member.description}</p>
+              </div>
+              
+              {/* Always visible name/role */}
+              <div className="mt-6 text-center">
+                <h3 className="text-xl font-bold font-primary text-white">{member.name}</h3>
+                <p className="text-white/80 font-secondary">{member.role}</p>
               </div>
             </motion.div>
           ))}

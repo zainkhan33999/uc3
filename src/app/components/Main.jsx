@@ -1,19 +1,19 @@
 "use client"
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
-import main1 from "../assets/main1.jpg"
+import main1 from "../assets/main@.jpg"
 import main2 from "../assets/main2.jpg"
 import main3 from "../assets/main3.jpg"
-import main4 from "../assets/main4.jpeg"
+import main4 from "../assets/4.jpg"
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Main = () => {
   const slides = [
     {
       image: main1,
-      alt: "SIR SYED UNIVERSITY KARACHI",
-      heading: "SIR SYED UNIVERSITY KARACHI",
-      subheading: "Your Home Away From Home"
+      alt: "CRICKET STADIUM",
+      heading: "CRICKET STADIUM",
+     
     },
     {   
       image: main2,
@@ -23,9 +23,9 @@ const Main = () => {
     },
     {
       image: main4,
-      alt: "HOCKEY STADIUM NEPA",
-      heading: "HOCKEY STADIUM NEPA",
-      subheading: "Relax and Rejuvenate"
+      alt: "NASIR HUSSAIN SHAHEED",
+      heading: "NASIR HUSSAIN SHAHEED PARK",
+      subheading: ""
     }
   ];
 
@@ -82,7 +82,7 @@ const Main = () => {
           <Image 
             src={slides[currentIndex].image} 
             fill
-            className="object-cover brightness-50"
+            className="object-cover brightness-80"
             alt={slides[currentIndex].alt}
             priority
           />
@@ -106,7 +106,7 @@ const Main = () => {
             className="flex flex-col gap-2 items-center"
           >
             <motion.section>
-              <h1 className="text-white text-4xl md:text-5xl font-bold text-center px-4">
+              <h1 className="text-white font-primary text-4xl md:text-5xl font-bold text-center px-4">
                 {slides[currentIndex].heading}
               </h1>
             </motion.section>
@@ -116,10 +116,10 @@ const Main = () => {
               </p> */}
             </motion.section>
             <section className='text-[#f5f5f5]  flex gap-5 mt-5 cursor-pointer'>
-              <button onClick={() => handlebuttonClick("about")} className='cursor-pointer border-2 bg-[#0D7D43] hover:bg-transparent  hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
+              <button onClick={() => handlebuttonClick("about")} className='cursor-pointer border-2 bg-secondary font-secondary hover:bg-transparent  hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
               About US
               </button>
-              <button onClick={() => handlebuttonClick("contact")} className='cursor-pointer border-2 bg-[#0D7D43] hover:bg-transparent hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
+              <button onClick={() => handlebuttonClick("contact")} className='cursor-pointer border-2 bg-secondary font-secondary  hover:bg-transparent hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-5 pr-5'>
              CONTACT US
               </button>
             </section>

@@ -78,7 +78,7 @@ export default function SuccessModal({
                   onClick={onClose}
                   type="button"
                   className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide text-white transition-all duration-200 bg-gradient-to-r from-emerald-500 to-green-600 rounded-lg hover:from-emerald-600 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900 shadow-lg hover:shadow-emerald-500/30"
-                  whileHover={{ scale: 1.03 }}
+                  whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
                 >
                   Got it!

@@ -5,10 +5,10 @@ import { useInView } from "react-intersection-observer";
 
 // Import images
 import ne1 from "../assets/ne1.jpg";
-import ne2 from "../assets/ne2.jpg";
+import ne2 from "../assets/lightt.jpg";
 import ne3 from "../assets/ne3.jpg";
 import ne4 from "../assets/ne4.jpg";
-import ne5 from "../assets/ne5.jpeg";
+import ne5 from "../assets/ne5.jpg";
 import ne6 from "../assets/ne6.jpg";
 
 const NewsEvents = () => {
@@ -20,44 +20,44 @@ const NewsEvents = () => {
 
   const events = [
     {
-      title: "Street Lights",
+      title: "liftings the debris & Garbage",
       description:
-        "Street lights in our area enhance safety and visibility during nighttime.",
+        "On the directives of TOWN CHAIRMAN GULSHAN IQBAL DR.FAUAD AHMED , liftings the debris & Garbage from Uc.04 gulshan town.",
       image: ne1,
       alt: "Well-lit streets with new lighting infrastructure",
     },
     {
-      title: "Protest Demonstration",
+      title: "Street Lights",
       description:
-        "Facilitating safe and peaceful protests for community concerns",
+        "street lights are important for people safety",
       image: ne2,
       alt: "Community members participating in peaceful demonstration",
     },
     {
-      title: "Nariyal Bagh Restoration",
+      title: "Debris & Garbage Cleaning",
       description:
-        "Alhamdulillah, Jamaat-e-Islami has successfully restored this historic garden",
+        "On the directives of Chairman TMC Gulshan-e-Iqbal Town Dr Fauad Ahmed, Debris & Garbage Removal work from Gulshan-e-Iqbal especially at UC 4 near Ali Apartment & it's surroundings under the supervision Uc Chairman Fayazul Huda and Asif Azad",
       image: ne3,
       alt: "Renovated Nariyal Bagh public space",
     },
     {
-      title: "Family Parks Initiative",
+      title: "Clears a waterlogged",
       description:
-        "Five new family parks opened simultaneously to serve our community",
+        "A disaster management team of the TMC clears a waterlogged street along the Quba Mosque of GulshaneIqbal UC 4, following the city's rain on Saturday.",
       image: ne4,
       alt: "Children playing in newly opened family park",
     },
     {
-      title: "Neighborhood Cleanup",
+      title: "Clean environment of area residence of block 1",
       description:
-        "Comprehensive street cleaning campaign completed across all areas",
+        "As Per order of worthy town chairman Dr Fauad Ahmed Sahab to rehabilitation/facilitate and clean environment of area residence of block 1 near quba masjid UC 4 Gulshan e iqbal town East.",
       image: ne5,
       alt: "Clean streets after community cleanup effort",
     },
     {
-      title: "Ramadan Sasta Bazar",
+      title: "Maintenance at Nasir Hussain Park",
       description:
-        "Affordable market open daily from 2 PM to 6:30 PM during Ramadan",
+        "A view of maintenance at Nasir Hussain Park (UC 4), a part of Gulshaneiqbal Parks Department's campaign.",
       image: ne6,
       alt: "Community members shopping at Ramadan bazar",
     },
@@ -78,7 +78,7 @@ const NewsEvents = () => {
 
   return (
     <section
-      id="news-events"
+      id="news"
       className="bg-white py-12 md:py-16 lg:py-20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,21 +90,20 @@ const NewsEvents = () => {
           className="text-center mb-12"
         >
           <motion.h2
-            className="text-3xl md:text-4xl font-extrabold text-[#0d7d43] uppercase mb-4"
+            className="text-3xl md:text-4xl  font-primary font-bold text-secondary uppercase mb-4"
             initial={{ y: -20 }}
             animate={inView ? { y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            Community News & Events
+            Community Updates & Initiatives
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            className="text-lg font-secondary text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Stay updated with the latest initiatives and developments in our
-            community
+          Discover the newest programs and progress shaping our neighborhood
           </motion.p>
         </motion.div>
 
@@ -135,12 +134,12 @@ const NewsEvents = () => {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 rounded-[15px]" />
+              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 rounded-[15px]" />
 
               {/* Info */}
-              <div className="relative z-20 p-6 text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                <p className="text-sm tracking-wide mb-4">{event.description}</p>
+              <div className="relative z-20 p-6 text-white  bg-secondary/50 group-hover:bg-transparent translate-y-8  group-hover:translate-y-0 transition-all duration-500">
+                <h3 className="text-xl font-bold mb-2 font-primary">{event.title}</h3>
+                <p className="text-sm  font-secondary tracking-wide mb-4 opacity-0 group-hover:opacity-100">{event.description}</p>
               
               </div>
             </motion.div>

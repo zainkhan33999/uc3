@@ -1,84 +1,99 @@
 "use client"
-import React from 'react'
-import logo from "../assets/logo.jpg"
-import { RxHamburgerMenu } from "react-icons/rx";
-import Image from 'next/image'
-import { useState } from 'react';
+import * as React from 'react';
+import NextLink from 'next/link';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
+const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: 'about' },
+  { label: 'News', path: 'news' },
+  { label: 'Services', path: 'services' },
+  { label: 'Projects', path: 'projects' },
+  { label: 'Team', path: 'team' },
+  { label: 'Reviews', path: 'reviews' },
+  { label: 'Contact', path: 'contact' },
+];
 
-const Navbar = () => {
-    const [navState, setNavState] = useState(false)
+export default function Navbar() {
+  const [navState, setNavState] = React.useState(false)
     
-    const handleNavClick = (sectionId) => {
-        setNavState(false); // Close mobile menu on click
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-    
+  const handleNavClick = (sectionId) => {
+      setNavState(false); // Close mobile menu on click
+      const element = document.getElementById(sectionId);
+      if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+      }
+  };
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
-    const navItems = [
-        { name: 'Home', id: 'main' },
-        { name: 'About', id: 'about' },
-        { name: 'News & Events', id: 'news-events' },
-        { name: 'Our Team', id: 'team' },
-        { name: 'Services', id: 'services' },
-        { name: 'Reviews', id: 'reviews' },
-        { name: 'Contact', id: 'contact' }
-    ];
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
-    return (
-        <div className='overflow-hidden '>
-            {/* PC nav */}
-            <div className='hidden p-5 md:flex justify-between h-[15vh] items-center ml-3 mr-3  mt-5cursor-pointer'>
-              <h1 className='text-3xl font-bold text-[#0d7d43]'>
-UC-3 GULSHAN TOWN
-</h1>
-                <ul className='  flex  gap-5'>
-                    {navItems.map((item) => (
-                        <li 
-                            key={item.id} 
-                            className=' text-black cursor-pointer hover:underline hover:text-[#0d7d43] decoration-[#0d7d43] transition-colors duration-200'
-                            onClick={() => handleNavClick(item.id)}
-                        >
-                            {item.name}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+  return (
+    <div className="flex-grow  ">
+      <nav className="text-white fixed top-0 bg-primary w-full  z-50">
+        <div className="flex justify-between items-center px-4 py-3">
+          {/* Left side - Logo and mobile menu */}
+          <div className="flex items-center">
+            <button 
+              className="mr-4 md:hidden"
+              aria-label="Open menu"
+              onClick={toggleMobileMenu}
+            >
+              {mobileMenuOpen ? (
+                <IoMdClose size={25} className='font-[900]' />
+              ) : (
+                <GiHamburgerMenu size={25} className='font-[900]' />
+              )}
+            </button>
+            <h1 className="text-xl md:text-2xl  font-primary font-bold min-w-[300px]">
+              UC-4 GULSHAN TOWN
+            </h1>
+          </div>
 
-            {/* Mobile Nav */}
-            <div className='md:hidden'>
-                <section className='flex justify-between  h-[8vh] items-center cursor-pointer mr-2 ml-2 transition-all duration-300 ease-in-out'>
-                   
-                        <div>
-                      <h1 className='uppercase p-3 text-[#0d7d43] font-bold'>uc-3 gulshan town</h1>
-                     
-                    </div>
-                  
-                    <div className='border-2 p-1 border-[#0d7d43]'>
-                        <RxHamburgerMenu onClick={() => setNavState(!navState)} className='text-black' size={30} />
-                    </div>
-                </section>
-                
-                <section>
-                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${navState ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}>
-                        <ul className='className flex flex-col gap-2 p-2'>
-                            {navItems.map((item) => (
-                                <li 
-                                    key={item.id}
-                                    className='cursor-pointer  text-black active:text-white hover:text-white   hover:bg-[#0d7d43] bg-decoration-[#0d7d43] transition-colors duration-200 px-2 py-1'
-                                    onClick={() => handleNavClick(item.id)}
-                                >
-                                    {item.name}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-4">
+            {navItems.map((item) => (
+              <ul
+              key={item.path}>
+              <li
+              onClick={() => handleNavClick(item.path)}
+              
+             
+              className="px-2 py- cursor-pointer hover:bg-blue-700 rounded transition-colors"
+              >
+                {item.label}
+                </li>
+              </ul>
+            ))}
+          </div>
         </div>
-    )
-}
 
-export default Navbar;
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-primary-dark">
+            <ul className="flex flex-col items-center py-2  ">
+              {navItems.map((item) => (
+                <React.Fragment key={item.path}>
+                  <li className="w-full text-center   border-b border-white">
+                    <NextLink
+                      href={item.path}
+                      className="block px-4 py-2 hover:bg-secondary font-secondary transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </NextLink>
+                  </li>
+                  <li className="w-full px-4">
+                
+                  </li>
+                </React.Fragment>
+              ))}
+            </ul>
+          </div>
+        )}
+      </nav>
+    </div>
+  );
+}
