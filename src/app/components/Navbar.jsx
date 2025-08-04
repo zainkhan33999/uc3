@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 const navItems = [
-  { label: 'Home', path: '/' },
+  { label: 'Home', path: 'main' },
   { label: 'About', path: 'about' },
   { label: 'News', path: 'news' },
   { label: 'Services', path: 'services' },
